@@ -1,0 +1,58 @@
+<footer class="bg-gray-900 text-gray-300 mt-16 font-sans">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+        <!-- Brand & About -->
+        <div>
+            <h2 class="text-2xl font-bold text-orange-500 mb-4">RecipeHub</h2>
+            <p class="text-sm leading-relaxed">
+                Discover, cook, and share mouth-watering recipes from all over the globe.
+                From beginners to pros — everyone can be a chef here!
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h2 class="text-lg font-semibold text-white mb-4">Quick Links</h2>
+            <ul class="space-y-2 text-sm">
+                <li><a href="{% url 'recipes:home' %}" class="hover:text-orange-400 transition">🏠 Home</a></li>
+                <li><a href="{% url 'recipes:all_recipes' %}" class="hover:text-orange-400 transition">🍲 All Recipes</a></li>
+                <li><a href="{% url 'recipes:category_list' %}" class="hover:text-orange-400 transition">📂 Categories</a>
+                </li>
+                <li><a href="{% url 'recipes:contact' %}" class="hover:text-orange-400 transition">📩 Contact</a></li>
+                <li><a href="{% url 'recipes:about' %}" class="hover:text-orange-400 transition">ℹ️ About</a></li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+            <h2 class="text-lg font-semibold text-white mb-4">Newsletter</h2>
+            <p class="text-sm mb-3">Get the latest recipes & tips straight to your inbox.</p>
+            <form class="flex">
+                <input type="email" placeholder="Your email"
+                    class="w-full px-3 py-2 rounded-l bg-gray-800 border border-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400">
+                <button type="submit"
+                    class="bg-orange-500 px-4 py-2 rounded-r text-white hover:bg-orange-600 transition">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+
+        <!-- Social Links -->
+        <div>
+            <h2 class="text-lg font-semibold text-white mb-4">Follow Us</h2>
+            <div class="flex space-x-4 text-lg">
+                <a href="#" class="hover:text-orange-400 transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-orange-400 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-orange-400 transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-orange-400 transition"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="bg-gray-800 py-4">
+        <p class="text-center text-sm text-gray-500">
+            © {{ now.year }} RecipeHub — Cook. Share. Inspire.
+        </p>
+    </div>
+</footer>
