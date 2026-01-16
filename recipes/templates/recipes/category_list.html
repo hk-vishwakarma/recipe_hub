@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 py-6">
+    <h1 class="text-3xl font-bold text-orange-500 mb-6">
+        All Categories
+    </h1>
+
+    {% if categories %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for category in categories %}
+        <a href="{% url 'recipes:category_detail' category.slug %}"
+            class="block bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden group">
+
+            {% if category.image %}
+            <img src="{{ category.image.url }}" alt="{{ category.name }}"
+                class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300">
+            {% else %}
+            <img src="{% static 'recipes/images/default_category.jpg' %}" alt="No image"
+                class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300">
+            {% endif %}
+
+            <div class="p-4 text-center">
+                <h3 class="text-lg font-semibold text-gray-800 group-hover:text-orange-500">
+                    {{ category.name }}
+                </h3>
+                {% if category.description %}
+                <p class="text-gray-500 text-sm mt-2">{{ category.description|truncatewords:12 }}</p>
+                {% endif %}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-gray-500 mt-4">No categories found.</p>
+    {% endif %}
+</div>
+{% endblock %}
